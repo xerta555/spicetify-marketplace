@@ -5,6 +5,7 @@ import { Request, Response } from "express";
 
 export async function auth (req: Request, res: Response, next: Function) {
     const { accessToken } = req.body.token;
+    const username = req.body.username
     if (!accessToken) {
         return res.json(
             {
@@ -20,6 +21,15 @@ export async function auth (req: Request, res: Response, next: Function) {
             {
                 success: false,
                 message: "Invalid access token"
+            }
+        )
+            .end();
+    }
+    if( user.username !== username ) {
+        return res.json(
+            {
+                success: false,
+                message: "Username does not match access token"
             }
         )
             .end();
