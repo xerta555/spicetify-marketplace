@@ -3,7 +3,7 @@ import express, { Application, json } from "express";
 import Controller from "@/interfaces/controller";
 import debug from "debug";
 import { logger } from "./config";
-
+import {auth} from "@/middleware/auth"
 export default class App {
 	express: Application;
 	logger: debug.Debugger;

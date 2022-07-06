@@ -10,7 +10,9 @@
 		"paths": {
 			"@/controllers/*": ["server/controllers/*"],
 			"@/interfaces/*": ["server/interfaces/*"],
-			"@/routes/*": ["server/routes/*"]
+			"@/routes/*": ["server/routes/*"],
+			"@/middleware/*": ["server/middleware/*"],
+
 		},
 		"typeRoots": ["@types"],
 		"esModuleInterop": true,
